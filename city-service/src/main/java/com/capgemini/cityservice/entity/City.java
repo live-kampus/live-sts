@@ -1,6 +1,11 @@
 package com.capgemini.cityservice.entity;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class City {
+	@Id
 	private int cityId;
 	private String cityName;
 	private String cityState;

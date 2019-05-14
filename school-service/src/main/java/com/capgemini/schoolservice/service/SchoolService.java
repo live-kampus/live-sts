@@ -15,5 +15,6 @@ public interface SchoolService {
 	public School getSchoolById(int schoolId);
 
 	public void deleteBySchoolId(int schoolId);
-
+	
+	public School update(School school);
 }

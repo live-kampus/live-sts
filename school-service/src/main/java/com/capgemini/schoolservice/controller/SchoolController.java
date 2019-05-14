@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -43,6 +44,11 @@ public class SchoolController {
 	public ResponseEntity<School> deleteSchool(@PathVariable int schoolId) {
 		service.deleteBySchoolId(schoolId);
 		return new ResponseEntity(HttpStatus.OK);
+	}
+	
+	@PutMapping("/school")
+	public ResponseEntity<School> updateSchool(@RequestBody School school){
+		return new ResponseEntity<School>(service.update(school),HttpStatus.OK);
 	}
 	
 }

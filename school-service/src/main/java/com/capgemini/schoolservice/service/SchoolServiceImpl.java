@@ -40,4 +40,15 @@ public class SchoolServiceImpl implements SchoolService {
 		
 	}
 
+
+	@Override
+	public School update(School school) {
+		School updateSchool= dao.findByschoolId(school.getSchoolId());
+		updateSchool.setSchoolId(school.getSchoolId());
+		updateSchool.setSchoolName(school.getSchoolName());
+		updateSchool.setSchoolCity(school.getSchoolCity());
+		updateSchool.setSchoolState(school.getSchoolState());
+		return dao.save(updateSchool);
+	}
+
 }

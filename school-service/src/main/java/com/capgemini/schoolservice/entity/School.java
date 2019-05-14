@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class School {
 
-
+	@Id
 	private int schoolId;
 	private String schoolName;
 	private String schoolCity;

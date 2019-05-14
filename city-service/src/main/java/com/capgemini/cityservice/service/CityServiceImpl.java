@@ -37,4 +37,13 @@ public class CityServiceImpl implements CityService {
 	public void deleteByCityId(int cityId) {
 		dao.deleteBycityId(cityId);
 	}
+
+	@Override
+	public City update(City city) {
+		City updateCity= dao.findBycityId(city.getCityId());
+		updateCity.setCityId(city.getCityId());
+		updateCity.setCityName(city.getCityName());
+		updateCity.setCityState(city.getCityState());
+		return dao.save(updateCity);
+	}
 }
